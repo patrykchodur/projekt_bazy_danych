@@ -4,7 +4,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+import Project.Controllers.MainController;
+
 public class LoginController {
+	private MainController mainController;
 
 	@FXML
 	private TextField nickField;
@@ -13,8 +16,16 @@ public class LoginController {
 	private PasswordField passwordField;
 
 	@FXML
-	void signinUser(ActionEvent event) {
+	private void initialize() {
 
+	}
+
+	void setMainController(MainController toSet) {
+		this.mainController = toSet;
+	}
+
+	MainController getMainController() {
+		return mainController;
 	}
 
 }

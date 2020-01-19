@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginWindow">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controllers.LoginController">
    <children>
       <Label layoutX="192.0" layoutY="57.0" text="Wielki Brat 0.1">
          <font>
@@ -17,6 +16,6 @@
       </Label>
       <TextField fx:id="nickField" layoutX="217.0" layoutY="113.0" promptText="Nick obywatela" />
       <PasswordField fx:id="passwordField" layoutX="217.0" layoutY="152.0" promptText="Hasło" />
-      <Button layoutX="258.0" layoutY="200.0" mnemonicParsing="false" onAction="#signinUser" text="Zaloguj się" />
+      <Button layoutX="258.0" layoutY="200.0" mnemonicParsing="false" text="Zaloguj się" />
    </children>
 </AnchorPane>

@@ -14,7 +14,7 @@ public class Project extends Application {
 		// init app
 		FXMLLoader mainPaneLoader = new FXMLLoader();
 		mainPaneLoader.setLocation(Project.class.getResource(
-					"../scene_builder/main_pane.fxml"));
+					"../scene_builder/main_scene.fxml"));
 		StackPane mainPane = (StackPane) mainPaneLoader.load();
 
 		MainController mainController = mainPaneLoader.getController();
