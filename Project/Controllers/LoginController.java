@@ -5,6 +5,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import Project.Controllers.MainController;
+import javafx.event.ActionEvent;
 
 public class LoginController {
 	private MainController mainController;
@@ -18,6 +19,11 @@ public class LoginController {
 	@FXML
 	private void initialize() {
 
+	}
+
+	@FXML
+	void signinButtonClicked(ActionEvent event) {
+		System.out.println("Button Clicked");
 	}
 
 	void setMainController(MainController toSet) {
