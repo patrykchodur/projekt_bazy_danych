@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.3" layoutX="85.0" layoutY="98.0" prefHeight="160.0" prefWidth="315.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#displayCitizenData" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Dane obywatela" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#displayWorkSchedule" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Plan pracy" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                  <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#displayActivities" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Nadchodzące aktywności" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0" />
+                  <Button layoutX="30.0" layoutY="30.0" mnemonicParsing="false" onAction="#displayAddDenunciation" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Zgłoś donos" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="90.0" />
+                  <Button layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#displayCheckCitizen" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Sprawdź obywatela" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0" />
+                  <Button layoutX="50.0" layoutY="50.0" mnemonicParsing="false" onAction="#displayAddWork" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Dodaj pracę" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0" />
+                  <Button layoutX="60.0" layoutY="60.0" mnemonicParsing="false" onAction="#displayAddWorkHours" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Przydziel godziny pracy" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="180.0" />
+                  <Button layoutX="70.0" layoutY="70.0" mnemonicParsing="false" onAction="#displayAddActivity" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Dodaj aktywność" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="210.0" />
+                  <Button layoutX="80.0" layoutY="80.0" mnemonicParsing="false" onAction="#displaySignCitizenToActivity" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Zapisz na aktywność" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="240.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

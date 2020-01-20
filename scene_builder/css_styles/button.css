@@ -1,0 +1,7 @@
+.left-menu-button {
+	-fx-background-color: none;
+	-fx-border: none;
+}
+.left-menu-button:hover {
+	-fx-background-color: lightgray;
+}
