@@ -3,9 +3,16 @@ package Project.Controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import Project.Controllers.MainController;
+import javafx.scene.layout.AnchorPane;
 
 public class LeftMenuController {
-	MainController mainController;
+	protected MainController mainController;
+
+	@FXML
+	protected AnchorPane rootPane;
+
+	@FXML
+	protected AnchorPane rightPane;
 
 	void setMainController(MainController mainController) {
 		this.mainController = mainController;
@@ -39,7 +46,6 @@ public class LeftMenuController {
 
 	@FXML
 	void logoutAndDisplayLogin(ActionEvent event) {
-
 		mainController.launchLoginScreen();
 	}
 

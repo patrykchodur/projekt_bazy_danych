@@ -18,14 +18,9 @@ public class MainController {
 		launchLoginScreen();
 	}
 
-	public void setScreen(Pane pane) {
+	public void setRootPane(Pane pane) {
+		mainStackPane.getChildren().clear();
 		mainStackPane.getChildren().add(pane);
-	}
-
-	public void removeScreen() {
-		int size = mainStackPane.getChildren().size();
-		mainStackPane.getChildren().remove(size - 1, size);
-		System.out.println("Size: " + size);
 	}
 
 	public void launchLoginScreen() {
@@ -42,7 +37,7 @@ public class MainController {
 
 		LoginController loginController = loginLoader.getController();
 		loginController.setMainController(this);
-		setScreen(loginPane);
+		setRootPane(loginPane);
 	}
 
 

@@ -42,12 +42,11 @@ public class LoginController {
 			try {
 				FXMLLoader loader = new FXMLLoader(
 						LoginController.class.getResource(
-							"../../scene_builder/left_menu_scene.fxml"));
+							"../../scene_builder/left_menu_extended_scene.fxml"));
 				leftMenuPane = (AnchorPane) loader.load();
 				leftMenuController = loader.getController();
 				leftMenuController.setMainController(mainController);
-				mainController.removeScreen();
-				mainController.setScreen(leftMenuPane);
+				mainController.setRootPane(leftMenuPane);
 			}
 			catch (Exception ex) {
 				System.out.println(ex);

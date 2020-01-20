@@ -3,20 +3,13 @@ package Project.Controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
-public class LeftMenuExtendedController {
+import Project.Controllers.LeftMenuController;
 
-	@FXML
-	void displayActivities(ActionEvent event) {
+public class LeftMenuExtendedController extends LeftMenuController {
 
-	}
 
 	@FXML
 	void displayAddActivity(ActionEvent event) {
-
-	}
-
-	@FXML
-	void displayAddDenunciation(ActionEvent event) {
 
 	}
 
@@ -36,24 +29,8 @@ public class LeftMenuExtendedController {
 	}
 
 	@FXML
-	void displayCitizenData(ActionEvent event) {
-
-	}
-
-	@FXML
 	void displaySignCitizenToActivity(ActionEvent event) {
 
 	}
-
-	@FXML
-	void displayWorkSchedule(ActionEvent event) {
-
-	}
-
-	@FXML
-	void logoutAndDisplayLogin(ActionEvent event) {
-
-	}
-
 }
 

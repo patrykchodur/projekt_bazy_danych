@@ -4,7 +4,7 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controllers.LeftMenuController">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controllers.LeftMenuController">
    <children>
       <SplitPane dividerPositions="0.3" layoutX="85.0" layoutY="98.0" prefHeight="160.0" prefWidth="315.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -17,7 +17,7 @@
                   <Button layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#logoutAndDisplayLogin" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Wyloguj" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+          <AnchorPane fx:id="rightPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
         </items>
       </SplitPane>
    </children>
