@@ -4,8 +4,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+import javafx.fxml.FXMLLoader;
 import Project.Controllers.MainController;
 import javafx.event.ActionEvent;
+import Project.Controllers.LeftMenuController;
+import Project.Controllers.LeftMenuExtendedController;
+import Project.Controllers.LeftMenuThoughtPoliceController;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.AnchorPane;
 
 public class LoginController {
 	private MainController mainController;
@@ -23,7 +29,32 @@ public class LoginController {
 
 	@FXML
 	void signinButtonClicked(ActionEvent event) {
-		System.out.println("Button Clicked");
+		String login = nickField.getText();
+		String password = passwordField.getText();
+		// login to sql
+		AnchorPane leftMenuPane = null;
+		LeftMenuController leftMenuController = null;
+
+		boolean regularCitizen = true;
+		if (regularCitizen) {
+			// prepare data
+			LeftMenuController leftMenu = null;
+			try {
+				FXMLLoader loader = new FXMLLoader(
+						LoginController.class.getResource(
+							"../../scene_builder/left_menu_scene.fxml"));
+				leftMenuPane = (AnchorPane) loader.load();
+				leftMenuController = loader.getController();
+				leftMenuController.setMainController(mainController);
+				mainController.removeScreen();
+				mainController.setScreen(leftMenuPane);
+			}
+			catch (Exception ex) {
+				System.out.println(ex);
+			}
+		}
+		// else
+
 	}
 
 	void setMainController(MainController toSet) {

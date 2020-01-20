@@ -4,16 +4,17 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controllers.LeftMenuController">
    <children>
       <SplitPane dividerPositions="0.3" layoutX="85.0" layoutY="98.0" prefHeight="160.0" prefWidth="315.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="displayCitizenData" mnemonicParsing="false" onAction="#displayCitizenData" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Dane obywatela" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <Button fx:id="displayWorkSchedule" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#displayWorkSchedule" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Plan Pracy" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
-                  <Button fx:id="displayActivities" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#displayActivities" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Nadchodzące aktywności" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0" />
+                  <Button mnemonicParsing="false" onAction="#displayCitizenData" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Dane obywatela" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#displayWorkSchedule" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Plan Pracy" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+                  <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#displayActivities" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Nadchodzące aktywności" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0" />
                   <Button layoutX="30.0" layoutY="30.0" mnemonicParsing="false" onAction="#displayAddDenunciation" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Zgłoś donos" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="90.0" />
+                  <Button layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#logoutAndDisplayLogin" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Wyloguj" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
