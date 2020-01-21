@@ -13,7 +13,7 @@ CREATE TABLE "Obywatele" (
   "czlonkowstwo_partii" StopienCzlonkowstwa NOT NULL,
   "ocena_obywatela" int,
   "data_smierci" date,
-  "nieobywatel" boolean NOT NULL
+  "nieobywatel" boolean NOT NULL DEFAULT false
 );
 
 CREATE TABLE "Ministerstwa" (

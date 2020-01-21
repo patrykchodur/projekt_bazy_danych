@@ -13,7 +13,7 @@ Table Obywatele {
   czlonkowstwo_partii StopienCzlonkowstwa [not null]
   ocena_obywatela int
   data_smierci date
-  nieobywatel boolean [not null]
+  nieobywatel boolean [not null, default: false]
 }
 
 Table Ministerstwa {

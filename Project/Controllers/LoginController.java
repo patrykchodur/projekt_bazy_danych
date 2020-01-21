@@ -42,7 +42,7 @@ public class LoginController {
 			try {
 				FXMLLoader loader = new FXMLLoader(
 						LoginController.class.getResource(
-							"../../scene_builder/left_menu_extended_scene.fxml"));
+							"../../scene_builder/left_menu_thought_police_scene.fxml"));
 				leftMenuPane = (AnchorPane) loader.load();
 				leftMenuController = loader.getController();
 				leftMenuController.setMainController(mainController);

@@ -32,5 +32,10 @@ public class LeftMenuExtendedController extends LeftMenuController {
 	void displaySignCitizenToActivity(ActionEvent event) {
 
 	}
+
+	@FXML
+	void displayAddCitizen(ActionEvent event) {
+
+	}
 }
 

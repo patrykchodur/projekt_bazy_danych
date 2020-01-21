@@ -20,6 +20,7 @@
                   <Button layoutX="70.0" layoutY="70.0" mnemonicParsing="false" onAction="#displayAddActivity" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Dodaj aktywność" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="210.0" />
                   <Button layoutX="80.0" layoutY="80.0" mnemonicParsing="false" onAction="#displaySignCitizenToActivity" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Zapisz na aktywność" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="240.0" />
                   <Button layoutX="90.0" layoutY="90.0" mnemonicParsing="false" onAction="#logoutAndDisplayLogin" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Wyloguj" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Button layoutX="90.0" layoutY="90.0" mnemonicParsing="false" onAction="#displayAddCitizen" prefHeight="30.0" styleClass="left-menu-button" stylesheets="@css_styles/button.css" text="Dodaj obywatela" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="270.0" />
                </children>
             </AnchorPane>
           <AnchorPane fx:id="rightPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
