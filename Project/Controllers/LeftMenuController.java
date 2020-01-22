@@ -5,6 +5,9 @@ import javafx.fxml.FXML;
 import Project.Controllers.MainController;
 import javafx.scene.layout.AnchorPane;
 
+import Project.Controllers.CitizenInfoController;
+import javafx.fxml.FXMLLoader;
+
 public class LeftMenuController {
 	protected MainController mainController;
 
@@ -36,7 +39,20 @@ public class LeftMenuController {
 
 	@FXML
 	void displayCitizenData(ActionEvent event) {
-
+		CitizenInfoController control = null;
+		try {
+			FXMLLoader loader = new FXMLLoader(
+					LoginController.class.getResource(
+						"../../scene_builder/citizen_info_scene.fxml"));
+			AnchorPane pane = (AnchorPane) loader.load();
+			control = loader.getController();
+			control.updateData();
+			rightPane.getChildren().clear();
+			rightPane.getChildren().add(pane);
+		}
+		catch (Exception ex) {
+			System.out.println(ex);
+		}
 	}
 
 	@FXML
