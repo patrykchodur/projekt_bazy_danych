@@ -5,7 +5,7 @@ enum StopienCzlonkowstwa {
 }
 
 Table Obywatel {
-  id serial
+  id serial [pk]
   imie varchar [not null]
   nazwisko varchar [not null]
   data_urodzenia date [not null]
@@ -19,14 +19,14 @@ Table Obywatel {
 }
 
 Table Ministerstwo {
-  id serial
+  id serial [pk]
   nazwa_ministerstwa varchar [not null]
   liczba_pracownikow int
   opis_ministerstwa varchar
 }
 
 Table Praca {
-  id serial
+  id serial [pk]
   nazwa varchar
   ministerstwo_id int
   opis_obowiazkow varchar [not null]
@@ -38,7 +38,7 @@ Table Praca {
 }
 
 Table Aktywnosc {
-  id serial
+  id serial [pk]
   opis_aktywnosci varchar
   obowiazkowa boolean [not null]
   poczatek_aktywnosci timestamp [not null]
@@ -53,7 +53,7 @@ Table Obywatel_Aktywnosc {
 }
 
 Table Rozmowa {
-  id serial
+  id serial [pk]
   poczatek_rozmowy timestamp [not null]
   koniec_rozmowy timestamp
   transkrypcja_rozmowy varchar [not null]
@@ -67,7 +67,7 @@ Table Obywatel_Rozmowa {
 }
 
 Table Donosy {
-  id serial
+  id serial [pk]
   obywatel_skladajacy int [not null]
   data_zdarzenia timestamp
   miejsce_zdarzenia varchar
@@ -75,7 +75,7 @@ Table Donosy {
 }
 
 Table Myslozbrodnie {
-  id serial
+  id serial [pk]
   obywatel_id int [not null]
   stopien_niebezpieczenstwa int
   powiazany_donos int [ref: - Donosy.id]
