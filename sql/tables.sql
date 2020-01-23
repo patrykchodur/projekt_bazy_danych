@@ -82,20 +82,20 @@ CREATE TABLE Myslozbrodnie (
 
 ALTER TABLE Myslozbrodnie ADD FOREIGN KEY (powiazany_donos) REFERENCES Donosy (id);
 
-ALTER TABLE Obywatel_Aktywnosc ADD FOREIGN KEY (obywatel_id) REFERENCES Obywatel (id);
+ALTER TABLE Obywatel ADD FOREIGN KEY (id) REFERENCES Obywatel_Aktywnosc (obywatel_id);
 
-ALTER TABLE Obywatel_Aktywnosc ADD FOREIGN KEY (aktywnosc_id) REFERENCES Aktywnosc (id);
+ALTER TABLE Aktywnosc ADD FOREIGN KEY (id) REFERENCES Obywatel_Aktywnosc (aktywnosc_id);
 
-ALTER TABLE Myslozbrodnie ADD FOREIGN KEY (obywatel_id) REFERENCES Obywatel (id);
+ALTER TABLE Obywatel ADD FOREIGN KEY (id) REFERENCES Myslozbrodnie (obywatel_id);
 
-ALTER TABLE Praca ADD FOREIGN KEY (ministerstwo_id) REFERENCES Ministerstwo (id);
+ALTER TABLE Ministerstwo ADD FOREIGN KEY (id) REFERENCES Praca (ministerstwo_id);
 
-ALTER TABLE Obywatel_Rozmowa ADD FOREIGN KEY (obywatel_id) REFERENCES Obywatel (id);
+ALTER TABLE Obywatel ADD FOREIGN KEY (id) REFERENCES Obywatel_Rozmowa (obywatel_id);
 
-ALTER TABLE Obywatel_Rozmowa ADD FOREIGN KEY (rozmowa_id) REFERENCES Rozmowa (id);
+ALTER TABLE Rozmowa ADD FOREIGN KEY (id) REFERENCES Obywatel_Rozmowa (rozmowa_id);
 
-ALTER TABLE Praca ADD FOREIGN KEY (id) REFERENCES Obywatel (praca_id);
+ALTER TABLE Obywatel ADD FOREIGN KEY (praca_id) REFERENCES Praca (id);
 
-ALTER TABLE Praca ADD FOREIGN KEY (naczelnik_id) REFERENCES Obywatel (id);
+ALTER TABLE Obywatel ADD FOREIGN KEY (id) REFERENCES Praca (naczelnik_id);
 
-ALTER TABLE Myslozbrodnie ADD FOREIGN KEY (funkcjonariusz_id) REFERENCES Obywatel (id);
+ALTER TABLE Obywatel ADD FOREIGN KEY (id) REFERENCES Myslozbrodnie (funkcjonariusz_id);

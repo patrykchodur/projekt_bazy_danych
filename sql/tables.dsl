@@ -84,18 +84,13 @@ Table Myslozbrodnie {
 
 
 
-Ref: Obywatel.id < Obywatel_Aktywnosc.obywatel_id
-Ref: Aktywnosc.id < Obywatel_Aktywnosc.aktywnosc_id
-Ref: Obywatel.id < Myslozbrodnie.obywatel_id
-Ref: Ministerstwo.id < Praca.ministerstwo_id
-Ref: Obywatel.id < Obywatel_Rozmowa.obywatel_id
-Ref: Rozmowa.id < Obywatel_Rozmowa.rozmowa_id
-Ref: Obywatel.praca_id - Praca.id
-Ref: Obywatel.id - Praca.naczelnik_id
-Ref: Obywatel.id - Myslozbrodnie.funkcjonariusz_id
-
-
-
-
-
+Ref: Obywatel_Aktywnosc.obywatel_id < Obywatel.id
+Ref: Obywatel_Aktywnosc.aktywnosc_id < Aktywnosc.id
+Ref: Myslozbrodnie.obywatel_id < Obywatel.id
+Ref: Praca.ministerstwo_id < Ministerstwo.id
+Ref: Obywatel_Rozmowa.obywatel_id < Obywatel.id
+Ref: Obywatel_Rozmowa.rozmowa_id < Rozmowa.id
+Ref: Praca.id - Obywatel.praca_id
+Ref: Praca.naczelnik_id - Obywatel.id
+Ref: Myslozbrodnie.funkcjonariusz_id - Obywatel.id
 
