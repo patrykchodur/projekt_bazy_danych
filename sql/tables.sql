@@ -5,7 +5,7 @@ CREATE TYPE StopienCzlonkowstwa AS ENUM (
 );
 
 CREATE TABLE Obywatel (
-  id serial,
+  id serial PRIMARY KEY,
   imie varchar NOT NULL,
   nazwisko varchar NOT NULL,
   data_urodzenia date NOT NULL,
@@ -18,14 +18,14 @@ CREATE TABLE Obywatel (
 );
 
 CREATE TABLE Ministerstwo (
-  id serial,
+  id serial PRIMARY KEY,
   nazwa_ministerstwa varchar NOT NULL,
   liczba_pracownikow int,
   opis_ministerstwa varchar
 );
 
 CREATE TABLE Praca (
-  id serial,
+  id serial PRIMARY KEY,
   nazwa varchar,
   ministerstwo_id int,
   opis_obowiazkow varchar NOT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE Praca (
 );
 
 CREATE TABLE Aktywnosc (
-  id serial,
+  id serial PRIMARY KEY,
   opis_aktywnosci varchar,
   obowiazkowa boolean NOT NULL,
   poczatek_aktywnosci timestamp NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE Obywatel_Aktywnosc (
 );
 
 CREATE TABLE Rozmowa (
-  id serial,
+  id serial PRIMARY KEY,
   poczatek_rozmowy timestamp NOT NULL,
   koniec_rozmowy timestamp,
   transkrypcja_rozmowy varchar NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE Obywatel_Rozmowa (
 );
 
 CREATE TABLE Donosy (
-  id serial,
+  id serial PRIMARY KEY,
   obywatel_skladajacy int NOT NULL,
   data_zdarzenia timestamp,
   miejsce_zdarzenia varchar,
@@ -73,7 +73,7 @@ CREATE TABLE Donosy (
 );
 
 CREATE TABLE Myslozbrodnie (
-  id serial,
+  id serial PRIMARY KEY,
   obywatel_id int NOT NULL,
   stopien_niebezpieczenstwa int,
   powiazany_donos int,
