@@ -1,10 +1,10 @@
-CREATE OR REPLACE TYPE StopienCzlonkowstwa AS ENUM (
+CREATE TYPE StopienCzlonkowstwa AS ENUM (
   'proletariusz',
   'zewnetrznaPartia',
   'wewnetrznaPartia'
 );
 
-CREATE OR REPLACE TABLE Obywatele (
+CREATE TABLE Obywatele (
   id SERIAL PRIMARY KEY,
   imie varchar NOT NULL,
   nazwisko varchar NOT NULL,
@@ -16,7 +16,7 @@ CREATE OR REPLACE TABLE Obywatele (
   nieobywatel boolean NOT NULL DEFAULT false
 );
 
-CREATE OR REPLACE TABLE Ministerstwa (
+CREATE TABLE Ministerstwa (
   id SERIAL PRIMARY KEY,
   nazwa_ministerstwa varchar NOT NULL,
   liczba_pracownikow int,
@@ -24,7 +24,7 @@ CREATE OR REPLACE TABLE Ministerstwa (
   naczelnik_ministerstwa int NOT NULL
 );
 
-CREATE OR REPLACE TABLE Praca (
+CREATE TABLE Praca (
   id int PRIMARY KEY NOT NULL,
   ministerstwo int NOT NULL,
   opis_obowiazkow varchar NOT NULL,
@@ -32,7 +32,7 @@ CREATE OR REPLACE TABLE Praca (
   praca_spoleczna boolean NOT NULL
 );
 
-CREATE OR REPLACE TABLE GodzinyPracy (
+CREATE TABLE GodzinyPracy (
   id SERIAL PRIMARY KEY,
   obywatel int NOT NULL,
   zajecie int NOT NULL,
@@ -43,7 +43,7 @@ CREATE OR REPLACE TABLE GodzinyPracy (
   uwagi_i_odstepstwa varchar
 );
 
-CREATE OR REPLACE TABLE Aktywnosci (
+CREATE TABLE Aktywnosci (
   id SERIAL PRIMARY KEY,
   opis_aktywnosci varchar,
   obowiazkowa boolean NOT NULL,
@@ -53,7 +53,7 @@ CREATE OR REPLACE TABLE Aktywnosci (
   uwagi_i_odstepstwa varchar
 );
 
-CREATE OR REPLACE TABLE UczestnictwoWAktywnosci (
+CREATE TABLE UczestnictwoWAktywnosci (
   id SERIAL PRIMARY KEY,
   aktywnosc int NOT NULL,
   obywatel int NOT NULL,
@@ -62,7 +62,7 @@ CREATE OR REPLACE TABLE UczestnictwoWAktywnosci (
   czas_przybycia datetime
 );
 
-CREATE OR REPLACE TABLE Rozmowy (
+CREATE TABLE Rozmowy (
   id SERIAL PRIMARY KEY,
   poczatek_rozmowy datetime NOT NULL,
   koniec_rozmowy datetime,
@@ -71,7 +71,7 @@ CREATE OR REPLACE TABLE Rozmowy (
   uwagi_i_odstepstwa varchar
 );
 
-CREATE OR REPLACE TABLE UczestnicyRozmowy (
+CREATE TABLE UczestnicyRozmowy (
   id SERIAL PRIMARY KEY,
   obywatel int NOT NULL,
   rozmowa int NOT NULL,
@@ -80,7 +80,7 @@ CREATE OR REPLACE TABLE UczestnicyRozmowy (
   uwagi_i_odstepstwa varchar
 );
 
-CREATE OR REPLACE TABLE Donosy (
+CREATE TABLE Donosy (
   id serial,
   obywatel_skladajacy int NOT NULL,
   obywatel_podejrzany int NOT NULL,
@@ -89,7 +89,7 @@ CREATE OR REPLACE TABLE Donosy (
   opis_zdarzenia varchar
 );
 
-CREATE OR REPLACE TABLE Myslozbrodnie (
+CREATE TABLE Myslozbrodnie (
   id SERIAL PRIMARY KEY,
   obywatel int NOT NULL,
   stopien_niebezpieczenstwa int,
