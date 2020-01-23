@@ -36,10 +36,10 @@ CREATE TABLE GodzinyPracy (
   id SERIAL PRIMARY KEY,
   obywatel int NOT NULL,
   zajecie int NOT NULL,
-  poczatek_pracy datetime NOT NULL,
-  koniec_pracy datetime NOT NULL,
-  czas_przyjscia datetime,
-  czas_wyjscia datetime,
+  poczatek_pracy timestamp NOT NULL,
+  koniec_pracy timestamp NOT NULL,
+  czas_przyjscia timestamp,
+  czas_wyjscia timestamp,
   uwagi_i_odstepstwa varchar
 );
 
@@ -47,8 +47,8 @@ CREATE TABLE Aktywnosci (
   id SERIAL PRIMARY KEY,
   opis_aktywnosci varchar,
   obowiazkowa boolean NOT NULL,
-  poczatek_aktywnosci datetime NOT NULL,
-  koniec_aktywnosci datetime,
+  poczatek_aktywnosci timestamp NOT NULL,
+  koniec_aktywnosci timestamp,
   miejsce_aktywnosci varchar,
   uwagi_i_odstepstwa varchar
 );
@@ -59,13 +59,13 @@ CREATE TABLE UczestnictwoWAktywnosci (
   obywatel int NOT NULL,
   obecnosc boolean NOT NULL,
   stopien_zaangazowania int,
-  czas_przybycia datetime
+  czas_przybycia timestamp
 );
 
 CREATE TABLE Rozmowy (
   id SERIAL PRIMARY KEY,
-  poczatek_rozmowy datetime NOT NULL,
-  koniec_rozmowy datetime,
+  poczatek_rozmowy timestamp NOT NULL,
+  koniec_rozmowy timestamp,
   transkrypcja_rozmowy varchar NOT NULL,
   stopien_niebezpieczenstwa int,
   uwagi_i_odstepstwa varchar
@@ -75,16 +75,16 @@ CREATE TABLE UczestnicyRozmowy (
   id SERIAL PRIMARY KEY,
   obywatel int NOT NULL,
   rozmowa int NOT NULL,
-  moment_dolaczenia datetime NOT NULL,
-  moment_zakonczenia datetime,
+  moment_dolaczenia timestamp NOT NULL,
+  moment_zakonczenia timestamp,
   uwagi_i_odstepstwa varchar
 );
 
 CREATE TABLE Donosy (
-  id serial,
+  id SERIAL PRIMARY KEY,
   obywatel_skladajacy int NOT NULL,
   obywatel_podejrzany int NOT NULL,
-  data_zdarzenia datetime,
+  data_zdarzenia timestamp,
   miejsce_zdarzenia varchar,
   opis_zdarzenia varchar
 );
