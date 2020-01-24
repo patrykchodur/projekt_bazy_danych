@@ -7,3 +7,4 @@ DROP TABLE "obywatel_aktywnosc";
 DROP TABLE "obywatel_rozmowa";
 DROP TABLE "praca";
 DROP TABLE "rozmowa";
+DROP TABLE "danelogowania";

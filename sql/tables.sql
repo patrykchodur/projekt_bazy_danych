@@ -17,6 +17,12 @@ CREATE TABLE Obywatel (
   praca_id int
 );
 
+CREATE TABLE DaneLogowania (
+	id_obywatela int NOT NULL,
+	nick varchar NOT NULL,
+	haslo varchar NOT NULL
+);
+
 CREATE TABLE Ministerstwo (
   id serial PRIMARY KEY,
   nazwa_ministerstwa varchar NOT NULL,
@@ -99,3 +105,5 @@ ALTER TABLE Obywatel ADD FOREIGN KEY (praca_id) REFERENCES Praca (id);
 ALTER TABLE Praca ADD FOREIGN KEY (naczelnik_id) REFERENCES Obywatel (id);
 
 ALTER TABLE Myslozbrodnie ADD FOREIGN KEY (funkcjonariusz_id) REFERENCES Obywatel (id);
+
+ALTER TABLE DaneLogowania ADD FOREIGN KEY (id_obywatela) REFERENCES Obywatel (id);
