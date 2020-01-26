@@ -1,4 +1,4 @@
-INSERT INTO Obywatele (
+INSERT INTO Obywatel (
 	imie,
 	nazwisko,
 	data_urodzenia,
