@@ -3,7 +3,9 @@ package Project.Controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
-import Project.Controllers.LeftMenuController;
+import Project.Controllers.*;
+import javafx.fxml.*;
+import javafx.scene.layout.AnchorPane;
 
 public class LeftMenuExtendedController extends LeftMenuController {
 
@@ -15,7 +17,19 @@ public class LeftMenuExtendedController extends LeftMenuController {
 
 	@FXML
 	void displayAddWork(ActionEvent event) {
-
+		AddJobController control = null;
+		try {
+			FXMLLoader loader = new FXMLLoader(
+					LoginController.class.getResource(
+						"../../scene_builder/add_job_scene.fxml"));
+			AnchorPane pane = (AnchorPane) loader.load();
+			control = loader.getController();
+			control.updateData(conn);
+			setRightPane(pane);
+		}
+		catch (Exception ex) {
+			System.out.println(ex);
+		}
 	}
 
 	@FXML
