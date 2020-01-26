@@ -12,6 +12,7 @@ import java.sql.*;
 public class Project extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		// initialize postgresql driver
 		Class.forName("org.postgresql.Driver");
 
 		// init app

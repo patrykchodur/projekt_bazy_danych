@@ -12,6 +12,7 @@ import java.sql.Connection;
 public class LeftMenuController {
 	protected MainController mainController;
 	protected Connection conn;
+	protected int userId;
 
 	@FXML
 	protected AnchorPane rootPane;
@@ -25,6 +26,10 @@ public class LeftMenuController {
 
 	void setConnection(Connection conn) {
 		this.conn = conn;
+	}
+
+	void setId(int id) {
+		this.userId = id;
 	}
 
 	@FXML 
