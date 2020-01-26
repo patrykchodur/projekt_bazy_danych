@@ -27,6 +27,6 @@
       <TextField fx:id="finnishHour" layoutX="270.0" layoutY="259.0" prefHeight="27.0" prefWidth="107.0" promptText="gg:mm" />
       <Label layoutX="258.0" layoutY="236.0" text="Godzina zakończenia" />
       <Button layoutX="97.0" layoutY="286.0" mnemonicParsing="false" onAction="#addJob" text="Dodaj" />
-      <Label fx:id="errorLabel" layoutX="40.0" layoutY="332.0" prefHeight="17.0" prefWidth="143.0" />
+      <Label fx:id="errorLabel" layoutX="40.0" layoutY="332.0" prefHeight="17.0" prefWidth="343.0" textFill="RED" />
    </children>
 </AnchorPane>
