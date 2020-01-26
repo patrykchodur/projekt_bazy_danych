@@ -120,7 +120,6 @@ public class LoginController {
 		leftMenuController.setConnection(conn);
 		leftMenuController.setId(id);
 		mainController.setRootPane(leftMenuPane);
-
 	}
 
 	void setMainController(MainController toSet) {
