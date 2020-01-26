@@ -37,8 +37,8 @@ CREATE TABLE Praca (
   opis_obowiazkow varchar NOT NULL,
   naczelnik_id int,
   praca_spoleczna boolean NOT NULL,
-  poczatek_pracy timestamp NOT NULL,
-  koniec_pracy timestamp NOT NULL
+  poczatek_pracy time NOT NULL,
+  koniec_pracy time NOT NULL
 );
 
 CREATE TABLE Aktywnosc (
