@@ -7,10 +7,13 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 
 import Project.Controllers.MainController;
+import java.sql.*;
 
 public class Project extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		Class.forName("org.postgresql.Driver");
+
 		// init app
 		FXMLLoader mainPaneLoader = new FXMLLoader();
 		mainPaneLoader.setLocation(Project.class.getResource(

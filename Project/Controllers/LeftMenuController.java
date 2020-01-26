@@ -7,9 +7,11 @@ import javafx.scene.layout.AnchorPane;
 
 import Project.Controllers.CitizenInfoController;
 import javafx.fxml.FXMLLoader;
+import java.sql.Connection;
 
 public class LeftMenuController {
 	protected MainController mainController;
+	protected Connection conn;
 
 	@FXML
 	protected AnchorPane rootPane;
@@ -19,6 +21,10 @@ public class LeftMenuController {
 
 	void setMainController(MainController mainController) {
 		this.mainController = mainController;
+	}
+
+	void setConnection(Connection conn) {
+		this.conn = conn;
 	}
 
 	@FXML 
@@ -61,7 +67,8 @@ public class LeftMenuController {
 	}
 
 	@FXML
-	void logoutAndDisplayLogin(ActionEvent event) {
+	void logoutAndDisplayLogin(ActionEvent event) throws Exception {
+		conn.close();
 		mainController.launchLoginScreen();
 	}
 
