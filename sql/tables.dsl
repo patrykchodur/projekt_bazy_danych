@@ -15,7 +15,12 @@ Table Obywatel {
   data_smierci date
   nieobywatel boolean [not null, default: false]
   praca_id int
-  
+}
+
+Table DaneLogowania {
+  id_obywatela int [not null]
+  nick varchar [not null]
+  haslo varchar [not null]
 }
 
 Table Ministerstwo {
@@ -34,7 +39,6 @@ Table Praca {
   praca_spoleczna boolean [not null]
   poczatek_pracy timestamp [not null]
   koniec_pracy timestamp [not null]
-
 }
 
 Table Aktywnosc {
@@ -82,15 +86,24 @@ Table Myslozbrodnie {
   funkcjonariusz_id int
 }
 
-
+Ref: Myslozbrodnie.powiazany_donos < Donosy.id
 
 Ref: Obywatel_Aktywnosc.obywatel_id < Obywatel.id
+
 Ref: Obywatel_Aktywnosc.aktywnosc_id < Aktywnosc.id
+
 Ref: Myslozbrodnie.obywatel_id < Obywatel.id
+
 Ref: Praca.ministerstwo_id < Ministerstwo.id
+
 Ref: Obywatel_Rozmowa.obywatel_id < Obywatel.id
+
 Ref: Obywatel_Rozmowa.rozmowa_id < Rozmowa.id
-Ref: Praca.id - Obywatel.praca_id
+
+Ref: Obywatel.praca_id > Praca.id
+
 Ref: Praca.naczelnik_id - Obywatel.id
+
 Ref: Myslozbrodnie.funkcjonariusz_id - Obywatel.id
 
+Ref: DaneLogowania.id_obywatela - Obywatel.id
