@@ -72,7 +72,7 @@ public class AddActivityController {
 
 	}
 
-	public void updateData(Connection conn) throws SQLException {
+	public void updateData(Connection conn) {
 		this.conn = conn;
 	}
 

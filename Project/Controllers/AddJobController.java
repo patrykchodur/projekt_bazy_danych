@@ -72,7 +72,7 @@ public class AddJobController {
 		}
 
 		String ministry = ministryPicker.getValue();
-		if (ministry.isEmpty()) {
+		if (ministry == null) {
 			printError("Nie wybrano ministerstwa");
 			return;
 		}

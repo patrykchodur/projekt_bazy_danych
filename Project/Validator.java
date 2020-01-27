@@ -34,7 +34,31 @@ public class Validator {
 		int month = Integer.parseInt(tab[1]);
 		int year = Integer.parseInt(tab[2]);
 
-		return new Timestamp(year, month, day, hour, minutes, 0, 0);
+		if (day > 31 || day < 1 ||
+				month > 12 || month < 1 ||
+				year < 1900 || year > 2500)
+			throw new SQLException("Wrong date");
+
+		return new Timestamp(year - 1900, month - 1, day, hour, minutes, 0, 0);
 	}
+
+	@SuppressWarnings("deprecation")
+	static public Date getDate(String text) throws SQLException {
+		String[] tab = text.split("-");
+		if (tab.length != 3)
+			throw new SQLException("Wrong date format");
+
+		int day = Integer.parseInt(tab[0]);
+		int month = Integer.parseInt(tab[1]);
+		int year = Integer.parseInt(tab[2]);
+
+		if (day > 31 || day < 1 ||
+				month > 12 || month < 1 ||
+				year < 1900 || year > 2500)
+			throw new SQLException("Wrong date");
+
+		return new Date(year - 1900, month - 1, day);
+	}
+
 
 }
