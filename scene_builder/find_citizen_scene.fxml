@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="415.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controllers.FindCitizenController">
+   <children>
+      <Label layoutX="120.0" layoutY="31.0" text="Znajdź obywatela" AnchorPane.topAnchor="31.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameField" layoutX="37.0" layoutY="81.0" promptText="Imię" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="70.0" />
+      <TextField fx:id="surnameField" layoutX="211.0" layoutY="81.0" promptText="Nazwisko" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="70.0" />
+      <Button layoutX="179.0" layoutY="110.0" mnemonicParsing="false" onAction="#searchButton" text="Szukaj" />
+      <Label fx:id="resultsLabel" alignment="TOP_LEFT" layoutX="40.0" layoutY="151.0" prefHeight="204.0" prefWidth="326.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="160.0" />
+   </children>
+</AnchorPane>
