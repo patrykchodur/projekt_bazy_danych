@@ -8,6 +8,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import java.sql.*;
 import javafx.event.ActionEvent;
+import Project.Validator;
 
 public class AddJobController {
 	Connection conn;
@@ -58,23 +59,12 @@ public class AddJobController {
 		}
 		boolean volunteer = volunteerJobCheck.isSelected();
 		String desc = jobDescriptionText.getText();
-		String[] beginning = startHour.getText().split(":");
-		String[] end = finnishHour.getText().split(":");
-		int startHour;
-		int startMinutes;
-		int endHour;
-		int endMinutes;
-		try {
-			startHour = Integer.parseInt(beginning[0]);
-			startMinutes = Integer.parseInt(beginning[1]);
-			endHour = Integer.parseInt(end[0]);
-			endMinutes = Integer.parseInt(end[1]);
 
-			if (startHour < 0 || startHour > 23 ||
-					startMinutes < 0 || startMinutes > 59 ||
-					endHour < 0 || endHour > 23 ||
-					endMinutes < 0 || endMinutes > 59)
-				throw new Exception();
+		Time start;
+		Time end;
+		try {
+			start = Validator.getTime(startHour.getText());
+			end = Validator.getTime(finnishHour.getText());
 		}
 		catch (Exception ex) {
 			printError("Zły format godziny rozpoczęcia lub końca pracy");
@@ -102,8 +92,8 @@ public class AddJobController {
 		else 
 			stmt.setInt(++iter, headId);
 		stmt.setBoolean(++iter, volunteer);
-		stmt.setTime(++iter, Time.valueOf(startHour + ":" + startMinutes +":00"));
-		stmt.setTime(++iter, Time.valueOf(endHour + ":" + endMinutes + ":00"));
+		stmt.setTime(++iter, start);
+		stmt.setTime(++iter, end);
 		stmt.setString(++iter, ministryPicker.getValue());
 
 		if (stmt.executeUpdate() == 1)

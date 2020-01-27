@@ -12,7 +12,19 @@ public class LeftMenuExtendedController extends LeftMenuController {
 
 	@FXML
 	void displayAddActivity(ActionEvent event) {
-
+		AddActivityController control = null;
+		try {
+			FXMLLoader loader = new FXMLLoader(
+					LoginController.class.getResource(
+						"../../scene_builder/add_activity_scene.fxml"));
+			AnchorPane pane = (AnchorPane) loader.load();
+			control = loader.getController();
+			control.updateData(conn);
+			setRightPane(pane);
+		}
+		catch (Exception ex) {
+			System.out.println(ex);
+		}
 	}
 
 	@FXML

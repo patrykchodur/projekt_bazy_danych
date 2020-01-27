@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="415.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controllers.AddActivityController">
+   <children>
+      <Label layoutX="123.0" layoutY="31.0" text="Dodaj aktywność" AnchorPane.leftAnchor="123.0" AnchorPane.topAnchor="30.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="activityDescriptionText" layoutX="23.0" layoutY="57.0" prefHeight="130.0" prefWidth="200.0" promptText="Opis aktywności" AnchorPane.topAnchor="70.0" />
+      <CheckBox fx:id="isObligatoryCheckBox" layoutX="261.0" layoutY="57.0" mnemonicParsing="false" text="Obowiązkowa" AnchorPane.topAnchor="70.0" />
+      <TextField fx:id="startTime" layoutX="232.0" layoutY="117.0" promptText="dd-mm-rrrrr gg:mm" />
+      <Label layoutX="287.0" layoutY="94.0" text="Początek" />
+      <TextField fx:id="endTime" layoutX="232.0" layoutY="172.0" promptText="dd-mm-rrrrr gg:mm" />
+      <Label layoutX="294.0" layoutY="155.0" text="Koniec" AnchorPane.topAnchor="150.0" />
+      <TextField fx:id="activityPlaceText" prefWidth="275.0" promptText="Miejsce aktywności" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="220.0" />
+      <Button mnemonicParsing="false" onAction="#addActivity" text="Dodaj aktywność" AnchorPane.leftAnchor="146.0" AnchorPane.rightAnchor="146.0" AnchorPane.topAnchor="270.0" />
+      <Label fx:id="infoLabel" textFill="RED" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+   </children>
+</AnchorPane>
