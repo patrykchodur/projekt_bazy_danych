@@ -11,7 +11,7 @@ CREATE TABLE Obywatel (
   data_urodzenia date NOT NULL,
   plec char NOT NULL,
   czlonkowstwo_partii StopienCzlonkowstwa NOT NULL,
-  ocena_obywatela int,
+  ocena_obywatela int DEFAULT 0,
   data_smierci date,
   nieobywatel boolean NOT NULL DEFAULT false,
   praca_id int
