@@ -6,7 +6,7 @@ import Project.Controllers.MainController;
 import javafx.scene.layout.AnchorPane;
 
 import javafx.scene.layout.Pane;
-import Project.Controllers.CitizenInfoController;
+import Project.Controllers.*;
 import javafx.fxml.FXMLLoader;
 import java.sql.Connection;
 
@@ -46,6 +46,19 @@ public class LeftMenuController {
 
 	@FXML
 	void displayAddDenunciation(ActionEvent event) {
+		AddDenunciationController control = null;
+		try {
+			FXMLLoader loader = new FXMLLoader(
+					LoginController.class.getResource(
+						"../../scene_builder/add_denunciation_scene.fxml"));
+			AnchorPane pane = (AnchorPane) loader.load();
+			control = loader.getController();
+			control.updateData(userId, conn);
+			setRightPane(pane);
+		}
+		catch (Exception ex) {
+			System.out.println(ex);
+		}
 
 	}
 
