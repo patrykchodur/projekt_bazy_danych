@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="415.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.Controllers.AddCitizenController">
    <children>
       <Label layoutX="125.0" layoutY="34.0" text="Dodaj obywatela" AnchorPane.topAnchor="30.0">
@@ -26,8 +25,10 @@
       <RadioButton fx:id="manRadioButton" layoutX="63.0" layoutY="199.0" mnemonicParsing="false" onAction="#manClicked" text="Mężczyna" />
       <RadioButton fx:id="womanRadioButton" layoutX="63.0" layoutY="229.0" mnemonicParsing="false" onAction="#womanClicked" text="Kobieta" />
       <ChoiceBox fx:id="partyMembershipChoiceBox" layoutX="208.0" layoutY="194.0" prefWidth="150.0" />
-      <Button layoutX="180.0" layoutY="267.0" mnemonicParsing="false" onAction="#addCitizenButtonClicked" text="Dodaj" />
+      <Button layoutX="180.0" layoutY="313.0" mnemonicParsing="false" onAction="#addCitizenButtonClicked" text="Dodaj" />
       <Label fx:id="infoLabel" layoutX="37.0" layoutY="340.0" prefHeight="17.0" prefWidth="343.0" textFill="RED" />
       <CheckBox fx:id="evaporizedCheck" layoutX="212.0" layoutY="229.0" mnemonicParsing="false" text="Ewaporyzowany" />
+      <TextField fx:id="nickField" layoutX="37.0" layoutY="269.0" prefHeight="27.0" prefWidth="167.0" promptText="nick" />
+      <TextField fx:id="passwordField" layoutX="206.0" layoutY="269.0" prefHeight="27.0" prefWidth="167.0" promptText="hasło" />
    </children>
 </AnchorPane>

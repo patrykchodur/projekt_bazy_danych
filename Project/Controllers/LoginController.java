@@ -72,7 +72,7 @@ public class LoginController {
 		PreparedStatement stmt = conn.prepareStatement(
 				"SELECT praca_id FROM obywatel " +
 				"WHERE id = ?");
-		stmt.setString(1, String.valueOf(id));
+		stmt.setInt(1, id);
 		ResultSet rs = stmt.executeQuery();
 		if (!rs.next()) {
 			return -1;

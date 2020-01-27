@@ -42,6 +42,12 @@ public class AddCitizenController {
 	@FXML
 	private Label infoLabel;
 
+	@FXML
+	private TextField nickField;
+
+	@FXML
+	private TextField passwordField;
+
 	void printError(String text) {
 		infoLabel.setText("Error: " + text);
 	}
@@ -100,11 +106,20 @@ public class AddCitizenController {
 		else if (partyMembershipFromBox.equals("Wewnętrzna Partia"))
 			partyMembership = "wewnetrznaPartia";
 
+		String nick = nickField.getText();
+		String password = passwordField.getText();
+
+		if (nick.isEmpty() || password.isEmpty()) {
+			printError("Należy podać nick i hasło nowego obywatela");
+			return;
+		}
+
 		PreparedStatement stmt = conn.prepareStatement(
 				"INSERT INTO obywatel (" +
 				"imie, nazwisko, data_urodzenia, plec, " +
 				"czlonkowstwo_partii, data_smierci, nieobywatel) " +
-				"VALUES (?, ?, ?, ?, ?::stopienczlonkowstwa, ?, ?)");
+				"VALUES (?, ?, ?, ?, ?::stopienczlonkowstwa, ?, ?) " +
+				"RETURNING id", Statement.RETURN_GENERATED_KEYS);
 
 		int iter = 0;
 		stmt.setString(++iter, name);
@@ -118,8 +133,29 @@ public class AddCitizenController {
 			stmt.setDate(++iter, deathDate);
 		stmt.setBoolean(++iter, evaporizedCheck.isSelected());
 
+		if (stmt.executeUpdate() != 1) {
+			printError("Nieznany błąd połączenia z bazą");
+			return;
+		}
 
-		stmt.executeUpdate();
+		ResultSet rs = stmt.getGeneratedKeys();
+
+		rs.next();
+		int id = rs.getInt(1);
+
+		stmt = conn.prepareStatement(
+				"INSERT INTO DaneLogowania ( " +
+				"id_obywatela, nick, haslo) " +
+				"SELECT ?, ?, ?");
+		iter = 0;
+		stmt.setInt(++iter, id);
+		stmt.setString(++iter, nick);
+		stmt.setString(++iter, password);
+
+		if (stmt.executeUpdate() != 1) {
+			printError("Nieznany błąd połączenia z bazą");
+			return;
+		}
 
 		printInfo("Poprawnie dodano");
 	}
