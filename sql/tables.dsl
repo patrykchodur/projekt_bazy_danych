@@ -39,6 +39,7 @@ Table Praca {
   praca_spoleczna boolean [not null]
   poczatek_pracy timestamp [not null]
   koniec_pracy timestamp [not null]
+  dni_tygodnia int [not null, default: 63]
 }
 
 Table Aktywnosc {

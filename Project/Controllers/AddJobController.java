@@ -38,6 +38,27 @@ public class AddJobController {
 	private Label errorLabel;
 
 	@FXML
+	private CheckBox mondayCheckbox;
+
+	@FXML
+	private CheckBox tuesdayCheckbox;
+
+	@FXML
+	private CheckBox wednesdayCheckbox;
+
+	@FXML
+	private CheckBox thursdayCheckbox;
+
+	@FXML
+	private CheckBox fridayCheckbox;
+
+	@FXML
+	private CheckBox saturdayCheckbox;
+
+	@FXML
+	private CheckBox sundayCheckbox;
+
+	@FXML
 	void addJob(ActionEvent event) throws SQLException {
 		String name = jobName.getText();
 		if (name.isEmpty()) {
@@ -76,11 +97,25 @@ public class AddJobController {
 			printError("Nie wybrano ministerstwa");
 			return;
 		}
+		int daysOfTheWeek = 
+			(mondayCheckbox.isSelected() ? 1 : 0) << 0 |
+			(tuesdayCheckbox.isSelected() ? 1 : 0) << 1 |
+			(wednesdayCheckbox.isSelected() ? 1 : 0) << 2 |
+			(thursdayCheckbox.isSelected() ? 1 : 0) << 3 |
+			(fridayCheckbox.isSelected() ? 1 : 0) << 4 |
+			(saturdayCheckbox.isSelected() ? 1 : 0) << 5 |
+			(sundayCheckbox.isSelected() ? 1 : 0) << 6;
+
+		if (daysOfTheWeek == 0) {
+			printError("Nie wybrano żadnego dnia tygodnia");
+			return;
+		}
+
 
 		stmt = conn.prepareStatement(
 				"INSERT INTO Praca (nazwa, ministerstwo_id, " +
 				"opis_obowiazkow, naczelnik_id, praca_spoleczna, " +
-				"poczatek_pracy, koniec_pracy) " +
+				"poczatek_pracy, koniec_pracy, dni_tygodnia) " +
 				"SELECT ?, m.id, ?, ?, ?, ?, ? FROM Ministerstwo m " +
 				"WHERE m.nazwa_ministerstwa = ?");
 
@@ -95,6 +130,7 @@ public class AddJobController {
 		stmt.setTime(++iter, start);
 		stmt.setTime(++iter, end);
 		stmt.setString(++iter, ministryPicker.getValue());
+		stmt.setInt(++iter, daysOfTheWeek);
 
 		if (stmt.executeUpdate() == 1)
 			errorLabel.setText("Poprawnie dodano stanowisko");

@@ -38,7 +38,8 @@ CREATE TABLE Praca (
   naczelnik_id int,
   praca_spoleczna boolean NOT NULL,
   poczatek_pracy time NOT NULL,
-  koniec_pracy time NOT NULL
+  koniec_pracy time NOT NULL,
+  dni_tygodnia int NOT NULL DEFAULT 63
 );
 
 CREATE TABLE Aktywnosc (
