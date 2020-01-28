@@ -16,6 +16,19 @@ public class LeftMenuThoughtPoliceController extends LeftMenuController {
 
 	@FXML
 	void displayAddThoughtCrime(ActionEvent event) {
+		AddThoughtCrimeController control = null;
+		try {
+			FXMLLoader loader = new FXMLLoader(
+					LoginController.class.getResource(
+						"../../scene_builder/add_thought_crime_scene.fxml"));
+			AnchorPane pane = (AnchorPane) loader.load();
+			control = loader.getController();
+			control.updateData(userId, conn);
+			setRightPane(pane);
+		}
+		catch (Exception ex) {
+			System.out.println(ex);
+		}
 
 	}
 
