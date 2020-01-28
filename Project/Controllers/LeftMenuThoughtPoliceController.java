@@ -21,7 +21,36 @@ public class LeftMenuThoughtPoliceController extends LeftMenuController {
 
 	@FXML
 	void displayCheckCitizen(ActionEvent event) {
+		CheckCitizenController control = null;
+		try {
+			FXMLLoader loader = new FXMLLoader(
+					LoginController.class.getResource(
+						"../../scene_builder/check_citizen_scene.fxml"));
+			AnchorPane pane = (AnchorPane) loader.load();
+			control = loader.getController();
+			control.updateData(conn);
+			setRightPane(pane);
+		}
+		catch (Exception ex) {
+			System.out.println(ex);
+		}
+	}
 
+	@FXML
+	void displayFindCitizen(ActionEvent event) {
+		FindCitizenController control = null;
+		try {
+			FXMLLoader loader = new FXMLLoader(
+					LoginController.class.getResource(
+						"../../scene_builder/find_citizen_scene.fxml"));
+			AnchorPane pane = (AnchorPane) loader.load();
+			control = loader.getController();
+			control.updateData(conn);
+			setRightPane(pane);
+		}
+		catch (Exception ex) {
+			System.out.println(ex);
+		}
 	}
 
 	@FXML
