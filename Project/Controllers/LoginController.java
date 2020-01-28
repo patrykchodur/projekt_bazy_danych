@@ -70,13 +70,27 @@ public class LoginController {
 			return 3;
 		
 		PreparedStatement stmt = conn.prepareStatement(
-				"SELECT praca_id FROM obywatel " +
+				"SELECT praca_id, czlonkowstwo_partii FROM obywatel " +
 				"WHERE id = ?");
 		stmt.setInt(1, id);
 		ResultSet rs = stmt.executeQuery();
 		if (!rs.next()) {
 			return -1;
 		}
+		int jobId = rs.getInt(1);
+		String membership = rs.getString(2);
+
+		stmt = conn.prepareStatement(
+				"SELECT nazwa FROM praca WHERE id = ?");
+		stmt.setInt(1, jobId);
+		rs = stmt.executeQuery();
+
+		if (rs.next()) {
+			if (rs.getString(1).equals("Policja myśli"))
+				return 2;
+		}
+		if (membership.equals("wewnetrznaPartia"))
+			return 3;
 		// TODO return valid value
 		return 1;
 	}
@@ -88,7 +102,7 @@ public class LoginController {
 						"../../scene_builder/left_menu_scene.fxml"));
 			case 2:
 				return new FXMLLoader(LoginController.class.getResource(
-						"../../scene_builder/left_menu_thought_police_scene"));
+						"../../scene_builder/left_menu_thought_police_scene.fxml"));
 			case 3:
 				return new FXMLLoader(LoginController.class.getResource(
 						"../../scene_builder/left_menu_extended_scene.fxml"));
