@@ -46,7 +46,19 @@ public class LeftMenuExtendedController extends LeftMenuController {
 
 	@FXML
 	void displayAddWorkHours(ActionEvent event) {
-
+		AssignJobController control = null;
+		try {
+			FXMLLoader loader = new FXMLLoader(
+					LoginController.class.getResource(
+						"../../scene_builder/assign_job_scene.fxml"));
+			AnchorPane pane = (AnchorPane) loader.load();
+			control = loader.getController();
+			control.updateData(conn);
+			setRightPane(pane);
+		}
+		catch (Exception ex) {
+			System.out.println(ex);
+		}
 	}
 
 	@FXML
@@ -86,6 +98,19 @@ public class LeftMenuExtendedController extends LeftMenuController {
 
 	@FXML
 	void displaySignCitizenToActivity(ActionEvent event) {
+		AssignActivityController control = null;
+		try {
+			FXMLLoader loader = new FXMLLoader(
+					LoginController.class.getResource(
+						"../../scene_builder/assign_activity_scene.fxml"));
+			AnchorPane pane = (AnchorPane) loader.load();
+			control = loader.getController();
+			control.updateData(conn);
+			setRightPane(pane);
+		}
+		catch (Exception ex) {
+			System.out.println(ex);
+		}
 
 	}
 

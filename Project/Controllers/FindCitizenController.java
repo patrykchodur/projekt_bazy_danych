@@ -26,7 +26,7 @@ public class FindCitizenController {
 
 		PreparedStatement stmt = conn.prepareStatement(
 				"SELECT id, imie, nazwisko FROM " +
-				"Obywatel WHERE imie LIKE ? AND " +
+				"wszyscy_obywatele WHERE imie LIKE ? AND " +
 				"nazwisko LIKE ?");
 		int iter = 0;
 		stmt.setString(++iter, "%" + name + "%");

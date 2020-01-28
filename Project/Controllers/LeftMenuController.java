@@ -41,6 +41,19 @@ public class LeftMenuController {
 
 	@FXML
 	void displayActivities(ActionEvent event) {
+		ActivitiesScheduleController control = null;
+		try {
+			FXMLLoader loader = new FXMLLoader(
+					LoginController.class.getResource(
+						"../../scene_builder/activity_schedule_scene.fxml"));
+			AnchorPane pane = (AnchorPane) loader.load();
+			control = loader.getController();
+			control.updateData(userId, conn);
+			setRightPane(pane);
+		}
+		catch (Exception ex) {
+			System.out.println(ex);
+		}
 
 	}
 
@@ -86,6 +99,19 @@ public class LeftMenuController {
 
 	@FXML
 	void displayWorkSchedule(ActionEvent event) {
+		JobScheduleController control = null;
+		try {
+			FXMLLoader loader = new FXMLLoader(
+					LoginController.class.getResource(
+						"../../scene_builder/job_schedule_scene.fxml"));
+			AnchorPane pane = (AnchorPane) loader.load();
+			control = loader.getController();
+			control.updateData(userId, conn);
+			setRightPane(pane);
+		}
+		catch (Exception ex) {
+			System.out.println(ex);
+		}
 
 	}
 
