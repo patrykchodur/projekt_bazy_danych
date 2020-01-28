@@ -116,7 +116,7 @@ public class AddJobController {
 				"INSERT INTO Praca (nazwa, ministerstwo_id, " +
 				"opis_obowiazkow, naczelnik_id, praca_spoleczna, " +
 				"poczatek_pracy, koniec_pracy, dni_tygodnia) " +
-				"SELECT ?, m.id, ?, ?, ?, ?, ? FROM Ministerstwo m " +
+				"SELECT ?, m.id, ?, ?, ?, ?, ?, ? FROM Ministerstwo m " +
 				"WHERE m.nazwa_ministerstwa = ?");
 
 		int iter = 0;
@@ -129,8 +129,8 @@ public class AddJobController {
 		stmt.setBoolean(++iter, volunteer);
 		stmt.setTime(++iter, start);
 		stmt.setTime(++iter, end);
-		stmt.setString(++iter, ministryPicker.getValue());
 		stmt.setInt(++iter, daysOfTheWeek);
+		stmt.setString(++iter, ministryPicker.getValue());
 
 		if (stmt.executeUpdate() == 1)
 			errorLabel.setText("Poprawnie dodano stanowisko");
