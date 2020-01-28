@@ -84,7 +84,8 @@ CREATE TABLE Myslozbrodnie (
   obywatel_id int NOT NULL,
   stopien_niebezpieczenstwa int,
   powiazany_donos int,
-  funkcjonariusz_id int
+  funkcjonariusz_id int,
+  opis varchar
 );
 
 ALTER TABLE Myslozbrodnie ADD FOREIGN KEY (powiazany_donos) REFERENCES Donosy (id);

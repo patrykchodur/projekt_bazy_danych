@@ -85,6 +85,7 @@ Table Myslozbrodnie {
   stopien_niebezpieczenstwa int
   powiazany_donos int [ref: - Donosy.id]
   funkcjonariusz_id int
+  opis varchar
 }
 
 Ref: Myslozbrodnie.powiazany_donos < Donosy.id
