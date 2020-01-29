@@ -47,6 +47,15 @@ public class CitizenInfoController {
 		surnameLabel.setText("Nazwisko: " + rs.getString(++i));
 		birthDateLabel.setText("Data urodzenia: " + rs.getString(++i));
 		sexLabel.setText("Płeć: " + rs.getString(++i));
-		partyMembershipLabel.setText(rs.getString(++i));
+		String tmp = rs.getString(++i);
+		String membership;
+		if (tmp.equals("wewnetrznaPartia"))
+			membership = "Wewnętrzna Partia";
+		else if (tmp.equals("zewnetrznaPartia"))
+			membership = "Zewnętrzna Partia";
+		else
+			membership = "Poletariat";
+
+		partyMembershipLabel.setText(membership);
 	}
 }

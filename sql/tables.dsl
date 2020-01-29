@@ -83,7 +83,7 @@ Table Myslozbrodnie {
   id serial [pk]
   obywatel_id int [not null]
   stopien_niebezpieczenstwa int
-  powiazany_donos int [ref: - Donosy.id]
+  powiazany_donos int
   funkcjonariusz_id int
   opis varchar
 }

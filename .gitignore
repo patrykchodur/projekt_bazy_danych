@@ -2,6 +2,6 @@
 *.swp
 .idea
 *.class
-docs
+javafx-14-javadoc
 lib
 notes.md

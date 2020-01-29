@@ -10,4 +10,4 @@ sciagnietej biblioteki [JavaFX](https://gluonhq.com/products/javafx/)
 oraz plik .jar pobrany ze strony [postgresql](https://jdbc.postgresql.org) \
 \
 Aby uruchomić program należy w głównym katalogu repozytorium uruchomić
-plik `compile_and_run.sh`
+plik `compile_and_run.sh`, bądź samemu wywołać analogiczne komendy (tylko 2)
